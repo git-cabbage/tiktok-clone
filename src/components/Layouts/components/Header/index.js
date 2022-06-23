@@ -18,7 +18,7 @@ function Header() {
     /* fake search result */
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3])
+            setSearchResult([])
         }, 0)
     }, [])
 
@@ -55,7 +55,8 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <Button outline>Login</Button>
+                    <Button text>Upload</Button>
+                    <Button primary>Login</Button>
                 </div>
             </div>
         </header>
