@@ -11,30 +11,31 @@ function Button({
     outline = false,
     text = false,
     rounded = false,
+    disabled = false,
     small = false,
     large = false,
     children,
-    disabled,
-    leftIcon,
-    rigthIcon,
     className,
+    leftIcon,
+    rightIcon,
     onClick,
     ...passProps
 }) {
     let Comp = 'button'
+    const props = {
+        onClick,
+        ...passProps,
+    }
 
-    const props = { onClick, ...passProps }
-
-    // case user turn off css pointer-event
+    // Remove event listener when btn is disabled
     if (disabled) {
         Object.keys(props).forEach((key) => {
-            if (key.startsWith('on') && typeof props[key] == 'function') {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
                 delete props[key]
             }
         })
     }
 
-    // change component with props
     if (to) {
         props.to = to
         Comp = Link
@@ -48,17 +49,17 @@ function Button({
         primary,
         outline,
         text,
+        disabled,
         rounded,
         small,
         large,
-        disabled,
     })
 
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
-            {rigthIcon && <span className={cx('icon')}>{rigthIcon}</span>}
+            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     )
 }
