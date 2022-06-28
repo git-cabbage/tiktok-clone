@@ -6,6 +6,7 @@ import {
     faEllipsisVertical,
     faKeyboard,
     faMagnifyingGlass,
+    faPlus,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons'
 import Tippy from '@tippyjs/react/headless'
@@ -72,7 +73,9 @@ function Header() {
                 </Tippy>
 
                 <div className={cx('actions')}>
-                    <Button text>Upload</Button>
+                    <Button outline leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                        Upload
+                    </Button>
                     <Button primary>Log in</Button>
 
                     <Menu items={MENU_ITEMS}>

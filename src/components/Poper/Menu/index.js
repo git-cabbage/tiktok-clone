@@ -1,8 +1,10 @@
 import Tippy from '@tippyjs/react/headless'
 import classNames from 'classnames/bind'
-import styles from './Menu.module.scss'
 import { Wrapper as PoperWrapper } from '~/components/Poper'
+
+import styles from './Menu.module.scss'
 import MenuItem from './MenuItem'
+import Header from './Header'
 
 const cx = classNames.bind(styles)
 
@@ -15,10 +17,14 @@ function Menu({ children, items = [] }) {
         <Tippy
             delay={[0, 700]} // show, hide
             interactive
+            visible
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PoperWrapper className={cx('menu-poper')}>{renderItems()}</PoperWrapper>
+                    <PoperWrapper className={cx('menu-poper')}>
+                        <Header />
+                        {renderItems()}
+                    </PoperWrapper>
                 </div>
             )}
         >

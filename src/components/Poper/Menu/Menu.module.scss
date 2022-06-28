@@ -4,6 +4,10 @@
     .menu-item {
         margin-left: 0;
     }
+
+    a {
+        color: var(--black) !important;
+    }
 }
 
 .menu-poper {
@@ -14,12 +18,7 @@
     width: 100%;
     justify-content: flex-start;
     border-radius: 0;
-
-    a {
-        font-size: 1.6rem;
-        font-weight: 700;
-        cursor: pointer;
-    }
+    line-height: 2.2rem;
 
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);

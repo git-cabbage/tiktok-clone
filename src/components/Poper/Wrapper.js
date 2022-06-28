@@ -1,4 +1,3 @@
-import Poper from './index'
 import classNames from 'classnames/bind'
 import styles from './Poper.module.scss'
 
